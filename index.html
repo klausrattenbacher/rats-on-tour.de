@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rats on Tour – Event Agentur Donauwörth</title>
+<meta name="description" content="Rats on Tour ist die Event-Agentur von Klaus Rattenbacher in Donauwörth: Poetry Slam Donauwörth, Poetry Slam Beginner Award und die Rush Revival Party.">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.png">
+<style>
+    :root {
+        --schwarz: #141414;
+        --grau: #5a5a5a;
+        --linie: #e2e2e2;
+        --akzent: #f5c518;
+        --papier: #ffffff;
+        --papier-warm: #faf8f4;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.65;
+        color: var(--schwarz);
+        background: var(--papier);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .huelle { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Kopf ── */
+
+    header {
+        text-align: center;
+        padding: 64px 0 48px;
+        border-bottom: 3px solid var(--schwarz);
+    }
+
+    header img {
+        width: 230px;
+        max-width: 60vw;
+        height: auto;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    h1 {
+        font-size: clamp(2.4rem, 7vw, 3.6rem);
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+    }
+
+    .unterzeile {
+        margin-top: 12px;
+        font-size: 1.05rem;
+        color: var(--grau);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    /* ── Einleitung ── */
+
+    .intro {
+        padding: 48px 0 8px;
+        font-size: 1.15rem;
+        max-width: 42em;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .intro strong { white-space: nowrap; }
+
+    /* ── Die drei Veranstaltungen ── */
+
+    h2 {
+        font-size: 1.05rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--grau);
+        margin: 56px 0 24px;
+        text-align: center;
+    }
+
+    .karten {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 24px;
+        padding-bottom: 8px;
+    }
+
+    .karte {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid var(--schwarz);
+        padding: 28px 24px 24px;
+        background: var(--papier);
+        text-decoration: none;
+        color: inherit;
+        transition: transform .15s ease, box-shadow .15s ease;
+    }
+
+    .karte:hover, .karte:focus-visible {
+        transform: translateY(-4px);
+        box-shadow: 8px 8px 0 var(--akzent);
+        outline: none;
+    }
+
+    .karte .seit {
+        font-size: .8rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--grau);
+    }
+
+    .karte h3 {
+        font-size: 1.35rem;
+        margin: 6px 0 12px;
+        line-height: 1.25;
+    }
+
+    .karte p { font-size: .98rem; flex-grow: 1; }
+
+    .karte .zur-seite {
+        margin-top: 18px;
+        font-weight: 600;
+        border-bottom: 3px solid var(--akzent);
+        align-self: flex-start;
+        padding-bottom: 2px;
+    }
+
+    /* Kein Termin, sondern das Angebot – deshalb farbig abgesetzt */
+    .karte-angebot {
+        background: var(--akzent);
+    }
+
+    .karte-angebot .seit { color: rgba(0,0,0,.65); }
+
+    .karte-angebot .zur-seite { border-bottom-color: var(--schwarz); }
+
+    .karte-angebot:hover, .karte-angebot:focus-visible {
+        box-shadow: 8px 8px 0 var(--schwarz);
+    }
+
+    /* ── Anfrage ── */
+
+    .anfrage {
+        margin: 64px 0 0;
+        background: var(--papier-warm);
+        border: 2px solid var(--schwarz);
+        padding: 36px 32px;
+    }
+
+    .anfrage h2 {
+        margin: 0 0 14px;
+        text-align: left;
+        color: var(--schwarz);
+        font-size: 1.5rem;
+        letter-spacing: -0.01em;
+        text-transform: none;
+    }
+
+    .anfrage p { max-width: 46em; }
+    .anfrage p + p { margin-top: 12px; }
+
+    a { color: var(--schwarz); }
+
+    .anfrage a, .kontakt a { text-decoration-color: var(--akzent); text-decoration-thickness: 3px; }
+
+    /* ── Kontakt ── */
+
+    .kontakt {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 28px;
+        margin: 56px 0;
+    }
+
+    .kontakt div strong {
+        display: block;
+        font-size: .8rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--grau);
+        margin-bottom: 6px;
+    }
+
+    /* ── Fuß ── */
+
+    footer {
+        border-top: 3px solid var(--schwarz);
+        padding: 40px 0 64px;
+        font-size: .92rem;
+        color: var(--grau);
+    }
+
+    footer h2 {
+        text-align: left;
+        margin: 0 0 12px;
+        color: var(--schwarz);
+    }
+
+    footer p + p { margin-top: 10px; }
+
+    details {
+        margin-top: 28px;
+        border-top: 1px solid var(--linie);
+        padding-top: 20px;
+    }
+
+    summary {
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--schwarz);
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        font-size: .82rem;
+    }
+
+    details[open] summary { margin-bottom: 14px; }
+
+    details h3 {
+        font-size: .95rem;
+        margin: 16px 0 4px;
+        color: var(--schwarz);
+    }
+
+    @media (max-width: 600px) {
+        header { padding: 44px 0 34px; }
+        .anfrage { padding: 28px 22px; }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <div class="huelle">
+        <img src="logo.png" alt="Rats on Tour – gezeichnetes Rattenlogo">
+        <h1>Rats on Tour</h1>
+        <p class="unterzeile">Event Agentur &middot; Donauwörth &middot; seit 1986</p>
+    </div>
+</header>
+
+<main class="huelle">
+
+    <p class="intro">
+        Bühne, Publikum, Programm: <strong>Rats on Tour</strong> ist die Event-Agentur von
+        Klaus Rattenbacher in Donauwörth. Angefangen mit Konzerten, Musikproduktion und
+        Bandmanagement, heute vor allem mit Poetry Slams – und einer Party, die eine ganze
+        Generation an ihre Discozeit erinnert.
+    </p>
+
+    <h2>Was wir auf die Bühne bringen</h2>
+
+    <div class="karten">
+
+        <a class="karte" href="https://xn--poetry-slam-donauwrth-yec.de">
+            <span class="seit">seit 2019</span>
+            <h3>Poetry Slam Donauwörth</h3>
+            <p>
+                Zweimal im Jahr treten Dichterinnen und Dichter in Donauwörth gegeneinander an –
+                im Frühjahr an der FOS/BOS, im Herbst am Gymnasium. Über das Ergebnis entscheidet
+                immer der Saal.
+            </p>
+            <span class="zur-seite">poetry-slam-donauwörth.de</span>
+        </a>
+
+        <a class="karte" href="https://poetry-slam-beginner-award.de">
+            <span class="seit">seit 2024</span>
+            <h3>Poetry Slam Beginner Award</h3>
+            <p>
+                Der Bühnenwettbewerb für neue Stimmen: vier bis acht Poetinnen und Poeten, eigene
+                Texte, sieben Minuten – dazu ein Special Guest, den die Szene kennt. Über den
+                Sieg entscheidet das Publikum. Zu Gast in Städten in ganz Bayerisch-Schwaben.
+            </p>
+            <span class="zur-seite">poetry-slam-beginner-award.de</span>
+        </a>
+
+        <a class="karte" href="https://rushparty.de">
+            <span class="seit">erstmals 2026</span>
+            <h3>Rush Revival Party</h3>
+            <p>
+                Am 26. Dezember 2026 im Starclub Donauwörth: die Musik der ehemaligen Diskothek
+                Rush, aufgelegt von den DJs von damals.
+            </p>
+            <span class="zur-seite">rushparty.de</span>
+        </a>
+
+        <a class="karte karte-angebot" href="mailto:klaus.rattenbacher@outlook.com?subject=Idee%20f%C3%BCr%20Donauw%C3%B6rth">
+            <span class="seit">in Entwicklung</span>
+            <h3>Zwei neue Abende entstehen gerade</h3>
+            <p>
+                Der eine bringt zwei Künstlerinnen oder Künstler für einen Abend zusammen – aus
+                der Slam-Szene oder von außerhalb, ohne Wettbewerb und ohne Sieben-Minuten-Grenze:
+                Platz für das, was beide am besten können, und für das, was zwischen ihnen
+                entsteht – Zusammenspiel oder Reibung. Der andere ist ein Gesprächsabend auf der
+                Bühne: mit Menschen, die etwas Besonderes gemacht haben – kleinen Helden des
+                Alltags und manchmal großen, von denen man hören sollte.
+            </p>
+            <span class="zur-seite">Idee schicken</span>
+        </a>
+
+    </div>
+
+    <section class="anfrage" id="anfrage">
+        <h2>Sie haben den Raum. Wir machen den Abend.</h2>
+        <p>
+            Eine Veranstaltung ist am Ende Organisation: Programm und Besetzung, Verträge und
+            Gagen, Technik, Plakate, Presse, Ticketverkauf, Ablaufplan – und jemand, der am Abend
+            den Überblick behält. Nach vierzig Jahren in diesem Geschäft übernehmen wir das
+            komplett oder genau die Teile, bei denen es bei Ihnen klemmt.
+        </p>
+        <p>
+            Fertig in der Schublade liegt der <em>Poetry Slam Beginner Award</em>: ein Format für
+            Ihre Stadt, mit Konzept und Regelwerk, Auswahl und Buchung der Auftretenden,
+            Moderation, digitaler Publikumsabstimmung und technischer Beratung. Veranstalter sind
+            Sie – Schule, Kulturhaus, Volkshochschule, Verein oder Kommune: Sie laden ein und
+            bewerben den Abend bei sich vor Ort, das Programm bringen wir mit. Bewährt hat sich
+            die Aula einer Schule, möglich ist jede Bühne mit Saal.
+        </p>
+        <p>
+            Schreiben Sie an
+            <a href="mailto:klaus.rattenbacher@outlook.com?subject=Anfrage%20Poetry%20Slam">klaus.rattenbacher@outlook.com</a>
+            oder rufen Sie an: <a href="tel:+491712819755">0171 2819755</a>.
+        </p>
+    </section>
+
+    <div class="kontakt">
+        <div>
+            <strong>Kontakt</strong>
+            Klaus Rattenbacher<br>
+            <a href="tel:+491712819755">0171 2819755</a><br>
+            <a href="mailto:klaus.rattenbacher@outlook.com">klaus.rattenbacher@outlook.com</a>
+        </div>
+        <div>
+            <strong>Anschrift</strong>
+            Heckenrosenstr. 9<br>
+            86609 Donauwörth
+        </div>
+        <div>
+            <strong>Folgen</strong>
+            Poetry Slam Donauwörth:
+            <a href="https://www.instagram.com/poetryslamdon/">Instagram</a> &middot;
+            <a href="https://www.facebook.com/slamdonauwoerth/">Facebook</a><br>
+            Beginner Award:
+            <a href="https://www.instagram.com/poetryslambeginner/">Instagram</a><br>
+            Rats on Tour:
+            <a href="https://www.facebook.com/RatsonTour/">Facebook</a>
+        </div>
+    </div>
+
+</main>
+
+<footer class="huelle">
+
+    <h2>Impressum</h2>
+    <p>
+        Klaus Rattenbacher<br>
+        Rats on Tour – Event Agentur<br>
+        Heckenrosenstr. 9<br>
+        86609 Donauwörth
+    </p>
+    <p>
+        Telefon: 0171 2819755<br>
+        E-Mail: klaus.rattenbacher@outlook.com
+    </p>
+    <p>
+        Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Klaus Rattenbacher, Anschrift wie oben.
+    </p>
+    <p>
+        Als Kleinunternehmer im Sinne von § 19 UStG wird keine Umsatzsteuer ausgewiesen; eine
+        Umsatzsteuer-Identifikationsnummer besteht nicht.
+    </p>
+    <p>
+        <strong>Streitschlichtung:</strong> Wir sind nicht bereit oder verpflichtet, an
+        Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+
+    <details>
+        <summary>Datenschutz</summary>
+
+        <p>
+            Diese Seite ist eine reine Informationsseite. Sie setzt keine Cookies, bindet keine
+            Schriften, Karten oder Analysewerkzeuge von Dritten ein und enthält kein
+            Kontaktformular.
+        </p>
+
+        <h3>Hosting</h3>
+        <p>
+            Die Seite wird bei GitHub Pages gehostet (GitHub, Inc., 88 Colin P. Kelly Jr. Street,
+            San Francisco, CA 94107, USA). Beim Aufruf überträgt Ihr Browser technisch notwendige
+            Daten an den Server – unter anderem IP-Adresse, Datum und Uhrzeit, aufgerufene Datei
+            und verwendeter Browser. Diese Verarbeitung dient dem sicheren und stabilen Betrieb
+            der Seite (Art. 6 Abs. 1 lit. f DSGVO). Auf Umfang und Dauer dieser Protokollierung
+            haben wir keinen Einfluss; Einzelheiten stehen in der Datenschutzerklärung von GitHub.
+        </p>
+
+        <h3>Kontaktaufnahme</h3>
+        <p>
+            Wenn Sie uns per E-Mail oder Telefon schreiben, verwenden wir Ihre Angaben
+            ausschließlich zur Beantwortung Ihrer Anfrage (Art. 6 Abs. 1 lit. b bzw. lit. f DSGVO)
+            und bewahren sie nur so lange auf, wie es dafür nötig ist.
+        </p>
+
+        <h3>Verlinkte Seiten</h3>
+        <p>
+            Für die Inhalte und den Datenschutz der verlinkten Veranstaltungsseiten und der
+            Facebook-Seite sind deren Anbieter verantwortlich.
+        </p>
+
+        <h3>Ihre Rechte</h3>
+        <p>
+            Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+            Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht, sich bei einer
+            Aufsichtsbehörde zu beschweren – zuständig ist das Bayerische Landesamt für
+            Datenschutzaufsicht, Promenade 18, 91522 Ansbach. Wenden Sie sich dafür an die oben
+            genannte Adresse.
+        </p>
+    </details>
+
+</footer>
+
+</body>
+</html>
